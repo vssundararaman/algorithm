@@ -1,3 +1,5 @@
+package Strings;
+
 /**
  * Two Numbers in String format is given, 
  * return the product of the two numbers 
