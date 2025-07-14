@@ -16,7 +16,6 @@ public class PrintAllSidesofMatrix {
     static void printAllSides(int[][] matrix) {
 
         // print Matrix as Such
-
         for(int[] row: matrix) {
             for (int cell: row) {
                 System.out.print(cell + " ");
@@ -24,5 +23,9 @@ public class PrintAllSidesofMatrix {
             System.out.println(" ");
         }
         System.out.println(" ");
+
+        //  print Column from Matrix
+
+        
     }
 }
