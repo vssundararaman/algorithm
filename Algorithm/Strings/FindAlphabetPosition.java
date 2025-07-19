@@ -8,7 +8,7 @@ public class FindAlphabetPosition {
 
     public static void main(String[] args) { 
 
-        findAlphabetPosition("Algorithm");
+        findAlphabetPosition("Algorithm21");
     }
 
     static void findAlphabetPosition(String str) {
@@ -17,7 +17,7 @@ public class FindAlphabetPosition {
             c = Character.toUpperCase(c);
 
             if(c >= 'A' || c <='Z') {
-                System.out.println( " Character "+ c + " : " +  (c - 'A' + 1)); 
+                System.out.println( " Character "+ c + " : " +  (c - 'A' + 1));
             }
             else {
                 System.err.println(" Invalid Characters ");

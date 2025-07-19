@@ -8,6 +8,11 @@ public class FibSeries {
             System.out.print(fibonacci(i) + " ,");
         }
 
+        System.out.println(" ");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(fibonacci2(i) + " ,");
+        }
+
     }
 
     static int fibonacci(int n) {
