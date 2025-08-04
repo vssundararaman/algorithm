@@ -6,6 +6,7 @@ package Numbers;
 public class ReverseNumber{
     public static void main(String[] args) {
         System.out.println(reverseNumber(1234));
+        System.out.println(reverseNumber(-1234));
     }
 
     static int reverseNumber(int num) {
