@@ -1,4 +1,4 @@
-package designpattern.prototype;
+package designpattern.creational.prototype;
 
 public class Employee implements Prototype{
     private String name;

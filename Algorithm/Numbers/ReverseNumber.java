@@ -16,8 +16,8 @@ public class ReverseNumber{
 
         while(num!=0){
             int digit = num % 10;
-            result = result * 10 + digit;
             num = num/10;
+            result = result * 10 + digit;
         }
         return sign * result;
     }

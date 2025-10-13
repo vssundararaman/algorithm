@@ -6,21 +6,50 @@ import java.util.concurrent.Executors;
 
 public class CompletableFutureExample {
     public static void main(String[] args) {
-        System.out.println("CompletableFuture Example");
-        ExecutorService executor = Executors.newFixedThreadPool(2);
 
-        System.out.println( "Main Thread Name" + Thread.currentThread().getName() );
-
-        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
-            System.out.println( "Thread Name" + Thread.currentThread().getName() );
-            return "Hello World";
-        }, executor)
-        .thenApplyAsync(result -> {
-            System.out.println( "Thread Name" + Thread.currentThread().getName() );
-            return result.toUpperCase();
-        }, executor).thenApplyAsync(result -> {
-            System.out.println( "Thread Name" + Thread.currentThread().getName() );
-            return result + "!!!";
-        }, executor);
+        try {
+            example1();
+            example2();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+    // Run task Asynchroniously
+    public static void example1() throws Exception{
+        CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+            System.out.println("Running task asynchronously" + Thread.currentThread().getName());
+        });
+
+        future.get();
+     }
+
+     // Supply a Result Asynchroniously
+    public static void example2() throws Exception{
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Running task asynchronously" + Thread.currentThread().getName());
+            return "Hello World";
+        });
+
+        System.out.println(future.get());
+    }
+
+    // then Apply example
+    static void thenApplyExample() throws Exception{
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Java")
+                .thenApply(s -> s + "8")
+                .thenApply(s -> s + " is awesome")
+                .thenApply(String::toUpperCase);
+
+        System.out.println(future.get());
+    }
+
+//    //then accept example
+//    static void thenAcceptExample() throws Exception{
+//        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Java")
+//                .thenAccept(s -> System.out.println(s + "8"))
+//                .get();
+//
+//    }
+
 }

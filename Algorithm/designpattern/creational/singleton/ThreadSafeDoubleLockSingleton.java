@@ -1,4 +1,4 @@
-package designpattern.singleton;
+package designpattern.creational.singleton;
 
 public class ThreadSafeDoubleLockSingleton {
     private static volatile ThreadSafeDoubleLockSingleton instance;

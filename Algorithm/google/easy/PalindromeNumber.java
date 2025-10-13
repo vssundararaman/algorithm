@@ -48,12 +48,14 @@ public class PalindromeNumber {
 
         int value = x;
         int result = 0;
+        int sign = x<0 ? -1: 1;
+        x = Math.abs(x);
 
         while (x >0) {
             result = result * 10 + x % 10;
-            x = x / 10;
+            x /= 10;
         }
 
-        return value == result;
+        return value == sign * result;
     }
 }
